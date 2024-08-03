@@ -3,13 +3,10 @@
     min-height: 732px;
     border-radius: 20px;
     background: #fff;
-    margin: auto;
-    margin-top: 174px;
     display: flex;
     flex-direction: column;
     padding: 0 44px;
     padding-bottom: 30px;
-    margin-bottom: 100px;
 }
 
 .todo-header {

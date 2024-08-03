@@ -4,7 +4,20 @@ import tick from './Assets/tick.png'
 import not_tick from './Assets/not_tick.png'
 import cross from './Assets/cross.png'
 
-function TodoItems({no, display, text, setTodos}) {
+function TodoItems({no, display, text, setTodos, setShowUpdatePopup, setPopupContent }) {
+
+  const clickToUpdateUser = (no) => {
+    setPopupContent()
+    setShowUpdatePopup(true)
+    // if (condition) {
+      
+    // } else {
+      
+    // }
+    let data = JSON.parse(localStorage.getItem('todos'))
+    data = data.filter((todo) => todo.no !== no)
+    setTodos(data)
+  }
 
   const toggle = (no) => {
     let data = JSON.parse(localStorage.getItem('todos'))
@@ -34,7 +47,8 @@ function TodoItems({no, display, text, setTodos}) {
         {display === '' ? <img src={not_tick} alt="" /> : <img src={tick} alt="" />}
         <div className="todoitems-text">{text}</div>
       </div>
-      <img className='todoitems-cross-icon' src={cross} alt="" onClick={() => {deleteTodo(no)}}/>
+      {/* <img className='todoitems-cross-icon' src={cross} alt="" onClick={() => {deleteTodo(no)}}/> */}
+      <img className='todoitems-cross-icon' src={cross} alt="" onClick={() => clickToUpdateUser(no)}/>
     </div>
   )
 }

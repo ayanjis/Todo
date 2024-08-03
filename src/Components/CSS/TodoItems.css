@@ -7,6 +7,7 @@
 
 .todoitems-container {
     display: flex;
+    align-items: center;
 }
 
 .todoitems-text {
@@ -17,7 +18,7 @@
 
 .todoitems-cross-icon {
     cursor: pointer;
-    padding-right: 25px;
+    /* padding-right: 25px; */
 }
 
 .line-through {
